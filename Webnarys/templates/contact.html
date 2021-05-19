@@ -1,2 +1,28 @@
 {% extends 'base.html' %}
- {% block  titl%}Contact | {% endblock  %}
+ {% block  title%}Contact | {% endblock  %}
+ {%block body%}
+<div class="container-fluid">
+</div>
+<div class="container">
+<h2 class="text-center"> Contact Us </h2>
+<form method="post" action="/contact">
+{% csrf_token %}
+<div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="Name">
+    <div id="Name" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="feedback" class="form-label">Drop your opinions</label>
+    <textarea class="form-control" id="feedback"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+ 
+  {%endblock body%}
