@@ -10,4 +10,6 @@ def contact(request):
 def signIn(request):
     return render(request,'signIn.html')
 def searchResult(request):
-    return render(request, 'searchResult.html')    
+    return render(request, 'searchResult.html')   
+def signUp(request):
+    return render(request, 'signUp.html')     
