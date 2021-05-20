@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
- {% block  title%}Contact | {% endblock  %}
- {%block body%}
-<div class="container-fluid">
+{% block  title%}Contact | {% endblock  %}
+{%block body%}
+
+<div class="container-fluid p-0" style="display: flex; flex-direction: column;">
+  <img style=" flex-wrap: wrap; flex: 1;" src="../static/images/contact.jfif" alt="contact us image">
+  <h2 class="text-center contact-heading" style="color: brown;">  Contact Us </h2>
 </div>
+
 <div class="container">
-<h2 class="text-center"> Contact Us </h2>
-<form method="post" action="/contact">
-{% csrf_token %}
-<div class="mb-3">
-    <label for="Name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="Name">
-    <div id="Name" class="form-text"></div>
-  </div>
-  <div class="mb-3">
-    <label for="Email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="feedback" class="form-label">Drop your opinions</label>
-    <textarea class="form-control" id="feedback"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="Name">
+      <div id="Name" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="feedback" class="form-label">Drop your opinions</label>
+      <textarea class="form-control" id="feedback"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
- 
-  {%endblock body%}
+
+{%endblock body%}

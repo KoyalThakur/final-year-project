@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
- {% block  title%}Home | {% endblock  %}
- {%block body%}
- This is home page
- {%endblock body%}
+{% block  title%}Home | {% endblock  %}
+{%block body%}
+
+<div class="index-container">
+    <section class="left-section">
+        <h1>Welcome to</h1>
+        <h1 class="strong-company-name">
+            WEBNARYS
+        </h1>
+        <h1>A complete rental solution for students.</h1>
+    </section>
+    <section class="right-section">
+        <div>Continue as: </div>
+        <div class="button-container">
+            <a href="/searchResult">As tenant</a>
+            <a href="/signIn">As landlord</a>
+        </div>
+    </section>
+</div>
+
+{%endblock body%}
