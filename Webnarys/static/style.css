@@ -1,6 +1,60 @@
-.contact-heading{
-    color: blanchedalmond;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+
+:root {
+    --pri-font-color: #f0f0f0;
+    --sec-font-color: #001616;
+    --pri-background-color: #c4c4c4;
 }
-.left-section{
-    background-color: blueviolet
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/******** Index page design*********/
+
+.index-container {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    background-color: beige;
+}
+
+/* left section */
+.left-section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../static/images/landing-background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-message {
+    color: var(--pri-font-color);
+    font-size: 2rem;
+}
+
+.company-name{
+    font-size: 4rem;
+    font-family: ;
+}
+
+/* right section */
+.right-section {
+    display: flex;
+    flex: 1;
+    background-color: #fff;
 }

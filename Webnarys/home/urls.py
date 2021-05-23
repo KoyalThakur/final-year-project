@@ -9,5 +9,4 @@ urlpatterns = [
     path('signIn',views.signIn,name='signIn'),
     path('signUp', views.signUphandle, name='signUphandle'),
     path('searchResult',views.searchResult,name='searchResult')
-
 ]

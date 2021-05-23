@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block  title%}Home | {% endblock  %}
+
 {%block body%}
 
-<div class="index-container">
+<main class="index-container">
     <section class="left-section">
-        <h1>Welcome to</h1>
-        <h1 class="strong-company-name">
+        <h1 class="landing-message">Welcome to </h1>
+        <h1 class="company-name">
             WEBNARYS
         </h1>
-        <h1>A complete rental solution for students.</h1>
+        <h1 class="landing-message">A complete rental solution for students.</h1>
     </section>
     <section class="right-section">
         <div>Continue as: </div>
@@ -17,6 +18,6 @@
             <a href="/signIn">As landlord</a>
         </div>
     </section>
-</div>
+</main>
 
 {%endblock body%}
