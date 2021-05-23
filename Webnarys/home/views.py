@@ -21,15 +21,14 @@ def searchResult(request):
     return render(request, 'searchResult.html')   
 def signUphandle(request):
     if request.method == 'POST':
-        name=request.POST['name']
-        email=request.POST['email']
-        password=request.POST['password']
-        myuser=User.objects.create_user(name,email,password)
+        username=request.POST['username']
+        useremail=request.POST['useremail']
+        userpassword=request.POST['userpassword']
+        myuser=User.objects.create_user(username,useremail,userpassword)
         myuser.save()
         return redirect('/index')
 
     else: 
          return HttpResponse("404 Error")
-
 
         
