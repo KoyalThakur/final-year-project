@@ -6,9 +6,7 @@ class Contact(models.Model):
     desc=models.TextField(max_length=250)
     date=models.DateField()
     
-    
     def __str__(self):
          return self.name
-
-
+         
 # Create your models here.
