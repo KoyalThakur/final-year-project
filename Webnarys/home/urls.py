@@ -9,6 +9,6 @@ urlpatterns = [
     path('contact',views.contact,name='contact'),
     path('signIn',views.signIn,name='signIn'),
     # path('signUp', views.signUphandle, name='signUphandle'),
-    path('searchResult',views.searchResult,name='searchResult')
-   
+    path('searchResult',views.searchResult,name='searchResult'),
+   url(r'^signUp/$', views.signup, name='signup'),
 ]
