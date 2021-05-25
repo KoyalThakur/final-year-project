@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import auth
 from home.forms import SignUpForm
 def index(request):
     return render(request,'index.html')
@@ -15,8 +16,10 @@ def contact(request):
         contact=Contact(name=name, email=email, desc=desc, date=datetime.today())
         contact.save()
     return render(request,'contact.html')
-def signIn(request):
-    return render(request,'signIn.html')
+def signin(request):
+    return render (request,'signIn.html')
+ 
+
 def searchResult(request):
     return render(request, 'searchResult.html')
 def signup(request):
@@ -34,17 +37,4 @@ def signup(request):
     return render(request, 'signUp.html', {'form': form})
     
     
-    # def signUphandle(request):
-#     if request.method == 'POST':
-#         username=request.POST['username']
-#         useremail=request.POST['useremail']
-#         userpassword=request.POST['userpassword']
-#         myuser=User.objects.create_user(username,useremail,userpassword)
-#         myuser.save()
-#         return redirect('/index')
-
-#     else: 
-#          return HttpResponse("404 Error")
-        
-
-        
+    

@@ -4,15 +4,15 @@
 
 this is signin page
 <div class="signin-container">
-<form>
+<form method="post" action="/signIn">
+{% csrf_token %}
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
+    <label for="loginname" class="form-label">User name</label>
+    <input type="text" class="form-control" id="loginname" name="loginname">
+    </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="loginpassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="loginpassword" name="loginpassword">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
