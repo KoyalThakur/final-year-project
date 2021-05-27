@@ -17,7 +17,14 @@ def contact(request):
         contact.save()
     return render(request,'contact.html')
 def signin(request):
-    return render (request,'signIn.html')
+    loginname = request.POST.get('loginname')
+    loginpassword = request.POST.get('loginpassword')
+    user = authenticate(request, username=loginname, password=loginpassword)
+    if user is not None:
+        login(request, user)
+        return redirect('/')
+    else:
+         return render (request,'signIn.html')
  
 
 def searchResult(request):
