@@ -232,8 +232,6 @@ ul {
     font-weight: 600;
 }
 
-.about-desc {}
-
 .team-container {
     display: flex;
     flex-direction: column;
@@ -256,6 +254,14 @@ ul {
     margin: 1rem;
     cursor: pointer;
     box-sizing: border-box;
+}
+
+.card-title {
+    font-size: 2rem;
+}
+
+.card-text {
+    font-size: 1.5rem;
 }
 
 /***************** RESPONSIVE DESIGN ****************/
