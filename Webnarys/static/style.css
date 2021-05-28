@@ -195,6 +195,73 @@ ul {
     display: none;
 }
 
+/*********** ABOUT PAGE DESIGN **************/
+.about-head {
+    background: url("../static/images/joe-woods-4Zaq5xY5M_c-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-text-about {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.about-desc-head,
+.about-desc {
+    color: var(--pri-font-color);
+}
+
+.about-desc-head,
+.team-head {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.about-desc {}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.team-card-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.card{
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+.card-body{
+}
+
 /***************** RESPONSIVE DESIGN ****************/
 @media (max-width: 992px) {
     .left-section {
@@ -230,6 +297,7 @@ ul {
         width: 30rem;
         padding: 1rem;
     }
+
     .input-div {
         width: 20rem;
         padding: 1rem;

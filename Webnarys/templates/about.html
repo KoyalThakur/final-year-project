@@ -1,3 +1,62 @@
 {% extends 'base.html' %}
- {% block  title%}About | {% endblock  %}
- {%block body%} {%endblock body%}
+{% block  title%}About | {% endblock  %}
+{%block body%}
+
+<div class="about-container">
+    <header class="about-head">
+        <div class="bg-text-about">
+            <h1 class="about-desc-head">
+                ABOUT WEBNARYS
+            </h1>
+            <p class="about-desc">
+                Our mission is to establish direct and transparent communication platform between tenant and
+                landlords, without the involvement of brokers or middle-men.
+            </p>
+        </div>
+    </header>
+</div>
+
+<div class="team-container">
+    <h1 class="team-head">
+        Our Team
+    </h1>
+    <div class="team-card-container">
+        <div class="card" style="width: 25rem;">
+            <img src="../static/images/arnav.jpg" class="card-img-top" alt="Arnav-pic">
+            <div class="card-body">
+                <h2 class="card-title">Arnav Raj</h2>
+                <p class="card-text">Frontend Developer</p>
+                <a href="https://www.linkedin.com/in/arnav-raj-198736192/" class=" btn btn-outline-success btn-lg"
+                    target="_blank">Connect Now!</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img src="../static/images/koyal.jpg" class="card-img-top" alt="koyal picture">
+            <div class="card-body">
+                <h2 class="card-title">Koyal Thakur</h2>
+                <p class="card-text">Database Handler</p>
+                <a href="#" target="_blank" class=" btn btn-outline-success btn-lg">Connect Now!</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img src="../static/images/ankita.jpg" class="card-img-top" alt="ankita picture">
+            <div class="card-body">
+                <h2 class="card-title">Ankita Paul</h2>
+                <p class="card-text">Backend Developer</p>
+                <a href="#" target="_blank" class=" btn btn-outline-success btn-lg">Connect Now!</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img src="../static/images/kaushik.jpg" class="card-img-top" alt="kaushik picture">
+            <div class="card-body">
+                <h2 class="card-title">Kaushik Pandey</h2>
+                <p class="card-text">Mutual effort in All Domain.</p>
+                <a href="#" target="_blank" class=" btn btn-outline-success btn-lg">Connect Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock body%}
