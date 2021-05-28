@@ -250,16 +250,12 @@ ul {
     flex-wrap: wrap;
 }
 
-.card{
+.card {
     justify-content: center;
     align-items: center;
     margin: 1rem;
     cursor: pointer;
     box-sizing: border-box;
-
-}
-
-.card-body{
 }
 
 /***************** RESPONSIVE DESIGN ****************/
@@ -279,6 +275,8 @@ ul {
 }
 
 @media (max-width: 510px) {
+
+    /* right container */
     .right-section-container {
         padding: 4rem;
     }
@@ -293,6 +291,7 @@ ul {
         height: 90vh;
     }
 
+    /* signin page */
     .signin-container {
         width: 30rem;
         padding: 1rem;
@@ -316,4 +315,19 @@ ul {
         font-weight: 400;
         margin-right: 1.5rem;
     }
+
+    /* about us page */
+    .about-head {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
 }
