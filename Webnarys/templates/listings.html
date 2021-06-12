@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block  title%}Listing | {% endblock  %}
+{%block body %}
+Welcome <br>
+<a href='{% url "add" %}'>Add New Property</a>
+{% for i in object_list %}
+    <p>{{i.institute_name}}: {{i.address}}: {{i.rent}}</p>
+{% endfor %}
+
+{%endblock body%}
