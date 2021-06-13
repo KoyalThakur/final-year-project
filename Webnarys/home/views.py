@@ -1,9 +1,14 @@
+from django.forms import formsets
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Contact
+from home.models import Contact, Property
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import auth
-from home.forms import SignUpForm
+from home.forms import SignUpForm, PropertyFormset
+
+from django.views.generic import ListView, TemplateView
+from django.urls import reverse_lazy
+
 def index(request):
     return render(request,'index.html')
 def about(request):
@@ -42,6 +47,26 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signUp.html', {'form': form})
+
+#View for property list
+class PropertyListView(ListView):
+    model= Property
+    template_name= "listings.html"
+
+#View for adding property
+class PropertyAddView(TemplateView):
+    template_name= "add.html"
+    def get(self, *args, **kwargs):
+        formset= PropertyFormset(queryset=Property.objects.none())
+        return self.render_to_response({'property_formset': formset})
     
+    def post(self, *args, **kwargs):
+        formset= PropertyFormset(data=self.request.POST)
+
+        if formset.is_valid():
+            formset.save()
+            return redirect(reverse_lazy("listings"))
+        return self.render_to_response({'property_formset': formset})
+
     
     

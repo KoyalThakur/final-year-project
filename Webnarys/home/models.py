@@ -10,3 +10,12 @@ class Contact(models.Model):
          return self.name
          
 # Create your models here.
+
+class Property(models.Model):
+    institute_name= models.CharField(max_length=250)
+    address= models.CharField(max_length=250)
+    rent= models.IntegerField()
+
+    def __str__(self):
+         return self.institute_name
+
