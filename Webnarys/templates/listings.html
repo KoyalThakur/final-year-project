@@ -6,8 +6,8 @@
     <h2>Welcome </h2>
     <a href='{% url "add" %}'>Add New Property</a>
 
-    {% for i in object_list %}
-        <p> {{i.institute_name}}: {{i.address}}: {{i.rent}} </p>
+    {% for property in object_list %}
+        <p> {{property.institute_name}}: {{property.address}}: {{property.rent}} </p>
     {% endfor %}
 
 {%endblock body%}
