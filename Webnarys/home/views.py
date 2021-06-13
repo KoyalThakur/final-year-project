@@ -27,7 +27,7 @@ def signin(request):
     user = authenticate(request, username=loginname, password=loginpassword)
     if user is not None:
         login(request, user)
-        return redirect('/')
+        return redirect('/listings')
     else:
          return render (request,'signIn.html')
  
