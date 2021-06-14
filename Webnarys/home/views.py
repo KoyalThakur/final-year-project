@@ -4,7 +4,7 @@ from datetime import datetime
 from home.models import Contact, Property
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import auth
-from home.forms import SignUpForm, PropertyFormset
+from home.forms import SignUpForm, PropertyFormSet
 
 from django.views.generic import ListView, TemplateView
 from django.urls import reverse_lazy
@@ -57,11 +57,11 @@ class PropertyListView(ListView):
 class PropertyAddView(TemplateView):
     template_name= "add.html"
     def get(self, *args, **kwargs):
-        formset= PropertyFormset(queryset=Property.objects.none())
+        formset= PropertyFormSet(queryset=Property.objects.none())
         return self.render_to_response({'property_formset': formset})
     
     def post(self, *args, **kwargs):
-        formset= PropertyFormset(data=self.request.POST)
+        formset= PropertyFormSet(data=self.request.POST)
 
         if formset.is_valid():
             formset.save()
