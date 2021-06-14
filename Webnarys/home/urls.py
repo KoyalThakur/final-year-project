@@ -12,5 +12,6 @@ urlpatterns = [
     path('searchResult',views.searchResult,name='searchResult'),
     url(r'^signUp/$', views.signup, name='signup'),
     path('listings', PropertyListView.as_view(), name='listings'),
-    path('add', PropertyAddView.as_view(), name='add')
+    path('add', PropertyAddView.as_view(), name='add'),
+    path('logout/', views.logout_view, name='logout')
 ]
