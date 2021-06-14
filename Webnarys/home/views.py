@@ -2,10 +2,9 @@ from django.forms import formsets
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Contact, Property
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.models import auth
 from home.forms import SignUpForm, PropertyFormSet
-
 from django.views.generic import ListView, TemplateView
 from django.urls import reverse_lazy
 
@@ -21,6 +20,7 @@ def contact(request):
         contact=Contact(name=name, email=email, desc=desc, date=datetime.today())
         contact.save()
     return render(request,'contact.html')
+
 def signin(request):
     loginname = request.POST.get('loginname')
     loginpassword = request.POST.get('loginpassword')
@@ -30,7 +30,10 @@ def signin(request):
         return redirect('/listings')
     else:
          return render (request,'signIn.html')
- 
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
 
 def searchResult(request):
     return render(request, 'searchResult.html')
