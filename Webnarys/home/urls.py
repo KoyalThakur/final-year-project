@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path,include
 from home import views
 from django.conf.urls import url
-from .views import PropertyAddView, PropertyListView
+
 
 urlpatterns = [
     path('',views.index,name='home'),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('signIn',views.signin,name='signin'),
     path('searchResult',views.searchResult,name='searchResult'),
     url(r'^signUp/$', views.signup, name='signup'),
-    path('listings', PropertyListView.as_view(), name='listings'),
-    path('add', PropertyAddView.as_view(), name='add'),
-    path('logout/', views.logout_view, name='logout')
+    path('logout/', views.logout_view, name='logout'),
+    path('listings/', views.list_view, name='listings'),
+    path('add/', views.add_property, name='add')
 ]

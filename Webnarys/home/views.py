@@ -1,11 +1,10 @@
 from django.forms import formsets
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Contact, Property
+from home.models import Contact,  Vendor, Property
 from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.models import auth
-from home.forms import SignUpForm, PropertyFormSet
-from django.views.generic import ListView, TemplateView
+from home.forms import SignUpForm, PropertyForm
 from django.urls import reverse_lazy
 
 def index(request):
@@ -46,30 +45,25 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/')
+            vendor= Vendor.objects.create(name=user.username,created_by=user)
+            return redirect('/listings')
     else:
         form = SignUpForm()
     return render(request, 'signUp.html', {'form': form})
 
-#View for property list
-class PropertyListView(ListView):
-    model= Property
-    template_name= "listings.html"
+def list_view(request):
+    vendor=request.user.vendor
+    properties=vendor.properties.all()
+    return render(request,'listings.html',{'vendor':vendor, 'properties':properties})
 
-#View for adding property
-class PropertyAddView(TemplateView):
-    template_name= "add.html"
-    def get(self, *args, **kwargs):
-        formset= PropertyFormSet(queryset=Property.objects.none())
-        return self.render_to_response({'property_formset': formset})
-    
-    def post(self, *args, **kwargs):
-        formset= PropertyFormSet(data=self.request.POST)
-
-        if formset.is_valid():
-            formset.save()
-            return redirect(reverse_lazy("listings"))
-        return self.render_to_response({'property_formset': formset})
-
-    
-    
+def add_property(request):
+    if request.method=='POST':
+        form=PropertyForm(request.POST)
+        if form.is_valid():
+            i=form.save(commit=False)
+            i.vendor=request.user.vendor
+            i.save()
+            return redirect('/listings')
+    else:
+        form=PropertyForm()
+    return render (request,'add.html',{'form':form})
