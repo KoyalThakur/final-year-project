@@ -3,13 +3,32 @@
 
 {%block body %}
 
+<div class="box">
+    <h1 class="title">Welcome - {{vendor.name}}
+    </h1>
     <a href="{% url 'logout' %}">Log Out</a>
-
-    <h2>Welcome </h2>
-    <a href='{% url "add" %}'>Add New Property</a>
-
-    {% for property in object_list %}
-        <p> {{property.institute_name}}: {{property.address}}: {{property.rent}} </p>
+</div>
+<div class="box">
+<h2 class='is-size-3 mb-4' >My properties</h2>
+<a href="{% url 'add'%}" class='button is-dark'>Add Property</a> 
+{% if properties %}
+    <table class='table is-fullwidth'>
+    <thead>
+    <tr>
+    <th>Address</th>
+    <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in properties %}
+    <tr>
+    <td>{{i.address}}</td>
+    <td>{{i.rent}}</td>
+    </tr>
     {% endfor %}
-
+    </tbody>
+    </table>
+    {%else%}
+    <p>No properties to show yet...</p>
+    {% endif %}
 {%endblock body%}
