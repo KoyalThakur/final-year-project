@@ -2,23 +2,23 @@
 {% block  title%}Sign In | {% endblock  %}
 {%block body %}
 <div class="main-container">
-<div class="signin-container">
-  <form method="post" action="/signIn">
-    {% csrf_token %}
-    <div class="mb-3">
-      <label for="loginname" class="form-label">Username: </label>
-      <input type="text" 
-      class="form-control input-div" id="loginname" name="loginname">
+  <div class="signin-container">
+  <h2 class="signup--heading">Login</h2>
+    <form method="post" action="/signIn">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="loginname" class="form-label">Username: </label>
+        <input type="text" class="form-control input-div" id="loginname" name="loginname">
+      </div>
+      <div class="mb-3">
+        <label for="loginpassword" class="form-label">Password: </label>
+        <input type="password" class="form-control input-div" id="loginpassword" name="loginpassword">
+      </div>
+      <button type="submit" class="local-btn submit-btn">Log In</button>
+    </form>
+    <div class="signup-div">
+      New to Webnarys? <a href="/signUp" class="signup-btn">Sign Up</a>
     </div>
-    <div class="mb-3">
-      <label for="loginpassword" class="form-label">Password: </label>
-      <input type="password" class="form-control input-div" id="loginpassword" name="loginpassword">
-    </div>
-    <button type="submit" class="local-btn submit-btn">Log In</button>
-  </form>
-  <div class="signup-div">
-    New to Webnarys? <a href="/signUp" class="signup-btn">Sign Up</a>
   </div>
-</div>
 </div>
 {%endblock body%}

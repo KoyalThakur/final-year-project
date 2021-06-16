@@ -2,13 +2,17 @@
 {% block  title%}Sign Up | {% endblock  %}
 {%block body%}
 
-<div class="signup-container">
-  <h2>Sign Up</h2>
+<div class="main-container">
+<div class="signup-container signin-container">
+  <h2 class="signup--heading">Sign Up</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="signup-btn">Sign up</button>
+    <button type="submit" class="local-btn submit-btn">Sign up</button>
   </form>
+  <div class="signup-div">
+      Already registered? <a href="/signIn" class="signup-btn">Login Now</a>
+    </div>
 </div>
-
+</div>
 {% endblock body%}
