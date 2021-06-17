@@ -2,32 +2,44 @@
 {% block  title%}Contact | {% endblock  %}
 {%block body%}
 
-<div class="container-fluid p-0" style="display: flex; flex-direction: column;">
-  <img style=" flex-wrap: wrap; flex: 1;" src="../static/images/contact.jfif" alt="contact us image">
-  <h2 class="text-center contact-heading"> Contact Us </h2>
-</div>
+<!-- <div class="container-fluid p-0" style="display: flex; flex-direction: column;">
+  <img style=" flex-wrap: wrap; flex: 1;" src="../static/images/contact--bg.jpg" alt="contact us image">
+</div> -->
 
-<div class="container">
-  <form method="post" action="/contact">
-    {% csrf_token %}
-    <div class="mb-3">
-      <label for="Name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="Name" name="name">
-      <div id="Name" class="form-text"></div>
-    </div>
-    <div class="mb-3">
-      <label for="Email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="feedback" class="form-label">
-        Drop your opinions
-      </label>
-      <textarea class="form-control" id="feedback" name="desc"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="contact-container">
+  <header class="contact-head">
+    <h1 class="about-desc-head contact-desc-head"> Contact Us </h1>
+  </header>
+
+  <div class="contact-form-container">
+    <form method="post" action="/contact" class="form-container">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name*</label>
+        <input type="text" class="form-control" id="Name" name="name">
+      </div>
+
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email address* <small id="emailHelp" class="form-text ">(We won't share your data)</small></label>
+        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email">
+      </div>
+
+      <div class="mb-3">
+        <label for="feedback" class="form-label">
+          Your message*
+        </label>
+        <textarea class="form-control" id="feedback" name="desc"></textarea>
+      </div>
+      <div>
+      <button type="submit" class="local-btn">Submit</button></div>
+    </form>
+
+    <!-- <div class="form-desc">
+      <h1>How Can We Help?</h1>
+
+    </div> -->
+  </div>
+
 </div>
 
 {%endblock body%}

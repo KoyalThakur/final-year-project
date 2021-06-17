@@ -250,7 +250,8 @@ input {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2rem 4rem;}
+    margin: 2rem 4rem;
+}
 
 .team-card-container {
     display: flex;
@@ -283,7 +284,6 @@ input {
     margin: 2rem 4rem;
 }
 
-
 .about-details-desc {
     display: flex;
     flex-direction: column;
@@ -291,7 +291,6 @@ input {
 }
 
 .para-desc {
-    /* list-style-type: "✔️"; */
     list-style-type: circle;
     padding: 1rem;
     margin: 1rem 0rem;
@@ -299,6 +298,51 @@ input {
     border-radius: 0.8rem 0.8rem 0.8rem 0rem;
 }
 
+/*********CONTACT US ********/
+.contact-head {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../static/images/contact-bg.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-desc-head {
+    color: var(--pri-font-color);
+}
+
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    margin: 2rem 4rem;
+    justify-content: space-evenly;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form-control {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.form-text {
+    font-size: 1rem;
+}
+
+/* .form-desc{
+    display: flex;
+    flex-direction: column;
+} */
 /***************** RESPONSIVE DESIGN ****************/
 @media (max-width: 992px) {
     .left-section {
