@@ -7,6 +7,8 @@ from django.contrib.auth.models import auth
 from home.forms import SignUpForm, PropertyForm
 from django.urls import reverse_lazy
 
+
+
 def index(request):
     return render(request,'index.html')
 def about(request):
@@ -36,6 +38,8 @@ def logout_view(request):
 
 def searchResult(request):
     return render(request, 'searchResult.html')
+
+    
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -58,7 +62,7 @@ def list_view(request):
 
 def add_property(request):
     if request.method=='POST':
-        form=PropertyForm(request.POST)
+        form=PropertyForm(request.POST,request.FILES)
         if form.is_valid():
             i=form.save(commit=False)
             i.vendor=request.user.vendor
