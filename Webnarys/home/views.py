@@ -6,7 +6,7 @@ from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.models import auth
 from home.forms import SignUpForm, PropertyForm
 from django.urls import reverse_lazy
-
+from django.contrib import messages
 
 
 def index(request):
@@ -20,6 +20,7 @@ def contact(request):
         desc=request.POST.get('desc')
         contact=Contact(name=name, email=email, desc=desc, date=datetime.today())
         contact.save()
+        messages.success(request,'Success')
     return render(request,'contact.html')
 
 def signin(request):
@@ -37,7 +38,10 @@ def logout_view(request):
     return redirect('/')
 
 def searchResult(request):
-    return render(request, 'searchResult.html')
+    query=request.GET['query']
+    properties=Property.objects.filter(institute_name__icontains=query)
+    params={'properties':properties}
+    return render(request, 'searchResult.html',params)
 
     
 def signup(request):
