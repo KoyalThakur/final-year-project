@@ -23,8 +23,15 @@
         <div class="right-section-container">
             <div class="btn-container-label">Continue as:</div>
             <div class="button-container">
-                <a href="/searchResult" class="pri-btn local-btn">Tenant</a>
+                {% comment %} <a href="/searchResult" class="pri-btn local-btn">Tenant</a> {% endcomment %}
                 <a href="/signIn" class="sec-btn local-btn">Landlord</a>
+                <div class="search-container">
+    <h1>Type the institute name you are looking for:</h1>
+    <form method="get" action="/searchResult">
+    <input name="query" id="query" class="form-control" type="search" placeholder="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    </div>
             </div>
         </div>
     </section>
