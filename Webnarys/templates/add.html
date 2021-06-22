@@ -3,11 +3,16 @@
 
 {%block body %}
 
-<h1 class='title-header'>Add property</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="signup-btn">Submit</button>
-</form>
+<div class="main-container">
+    <div class="signin-container add-container">
+        <h1 class='title-header signup--heading'>Add property</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="local-btn  ">Submit</button>
+        </form>
+    </div>
+</div>
+
 
 {%endblock body%}

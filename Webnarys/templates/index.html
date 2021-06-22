@@ -21,17 +21,16 @@
             </h1>
         </div>
         <div class="right-section-container">
-            <div class="btn-container-label">Continue as:</div>
-            <div class="button-container">
-                {% comment %} <a href="/searchResult" class="pri-btn local-btn">Tenant</a> {% endcomment %}
-                <a href="/signIn" class="sec-btn local-btn">Landlord</a>
-                <div class="search-container">
-    <h1>Type the institute name you are looking for:</h1>
-    <form method="get" action="/searchResult">
-    <input name="query" id="query" class="form-control" type="search" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    </div>
+            <div class="search-container">
+                <label for="search">Search for properties using college name</label>
+                <form method="get" action="/searchResult" class="input--container"> 
+                    <input name="query" id="query" class="form-control search--input" type="search" placeholder="input college name">
+                    <button class="local-btn search--btn" type="submit">🔍</button>
+                </form>
+            </div>
+            <div class="input--container ">
+                <h2 class="input--con--head">Are you landlord? </h2>
+                <a href="/signIn" class="sec-btn local-btn">Sign In  </a>
             </div>
         </div>
     </section>

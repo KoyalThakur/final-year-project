@@ -78,7 +78,7 @@ a {
 
 .right-section-container {
     box-shadow: 0 0 0.5rem 0.5rem rgb(65 81 64 / 40%);
-    padding: 10rem;
+    padding: 10rem 5rem;
     border-radius: 0.7rem 0.7rem 0.7rem 0rem;
     background-color: var(--sec-background-color);
 }
@@ -87,14 +87,19 @@ a {
     display: none;
 }
 
-.btn-container-label {
-    font-size: 4rem;
-    color: var(--border-color);
-    margin: 0rem 2rem 2rem 0rem;
+.input--container{
+    display: flex;
+    flex-direction: row;
+    /* margin: 0.5rem 0 rem ; */
+    align-items: center;
 }
 
-.btn-container {
-    flex-direction: row;
+.input--container:nth-child(2){
+    margin: 1rem 0rem;
+}
+
+.input--con--head{
+    margin: 0rem 2rem 0rem 1rem;
 }
 
 .local-btn {
@@ -106,6 +111,16 @@ a {
     padding: 1rem 2rem;
     font-weight: 500;
     margin-right: 2rem;
+}
+
+.search--input{
+    border: 0.2rem solid var(--border-color);
+   border-radius: 0rem;
+}
+
+.search--btn{
+ border-radius: 0rem;
+padding: 0.66rem 2rem;
 }
 
 .local-btn:hover {
@@ -152,6 +167,12 @@ a {
     background-color: var(--pri-background-color);
 }
 
+/* part of add */
+.add-container{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
 .main-container {
     background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0)), url("../static/images/jj-ying-WmnsGyaFnCQ-unsplash.jpg");
     background-size: cover;
@@ -159,7 +180,7 @@ a {
     background-position: center;
     margin-top: 0rem;
     width: 100%;
-    height: 95vh;
+    min-height: 95vh;
     display: flex;
 }
 
@@ -343,6 +364,51 @@ input {
     display: flex;
     flex-direction: column;
 } */
+
+
+/********** listing design *********/
+.listing-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.listing-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.item-listing-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.item-list-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/******* search result css*******/
+.search-result-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center ;
+    margin:2rem 1rem;
+    padding: 1rem;
+
+}
 /***************** RESPONSIVE DESIGN ****************/
 @media (max-width: 992px) {
     .left-section {

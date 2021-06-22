@@ -35,7 +35,7 @@ class Property(models.Model):
     acornonac=models.CharField(max_length=10,choices=air,default="NON-AC")
     image=models.ImageField(upload_to='uploads/',blank=True,null=True)
     thumbnail=models.ImageField(upload_to='uploads/',blank=True,null=True)
-    desc=models.TextField(max_length=100,help_text="Want to write more about your property?",default="NA")
+    desc=models.TextField(max_length=100,help_text="Want to write more about your property?",default="")
     occupancy=models.IntegerField(default=0,help_text="Enter occupancy per room")
     phone=models.IntegerField(default=0)
     class Meta:
