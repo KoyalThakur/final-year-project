@@ -24,14 +24,17 @@ def contact(request):
     return render(request,'contact.html')
 
 def signin(request):
-    loginname = request.POST.get('loginname')
-    loginpassword = request.POST.get('loginpassword')
-    user = authenticate(request, username=loginname, password=loginpassword)
-    if user is not None:
-        login(request, user)
+    if request.user.is_authenticated:
         return redirect('/listings')
     else:
-         return render (request,'signIn.html')
+        loginname = request.POST.get('loginname')
+        loginpassword = request.POST.get('loginpassword')
+        user = authenticate(request, username=loginname, password=loginpassword)
+        if user is not None:
+            login(request, user)
+            return redirect('/listings')
+        else:
+            return render (request,'signIn.html')
 
 def logout_view(request):
     logout(request)
