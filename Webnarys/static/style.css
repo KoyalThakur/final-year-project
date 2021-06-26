@@ -87,18 +87,18 @@ a {
     display: none;
 }
 
-.input--container{
+.input--container {
     display: flex;
     flex-direction: row;
     /* margin: 0.5rem 0 rem ; */
     align-items: center;
 }
 
-.input--container:nth-child(2){
+.input--container:nth-child(2) {
     margin: 1rem 0rem;
 }
 
-.input--con--head{
+.input--con--head {
     margin: 0rem 2rem 0rem 1rem;
 }
 
@@ -113,14 +113,14 @@ a {
     margin-right: 2rem;
 }
 
-.search--input{
+.search--input {
     border: 0.2rem solid var(--border-color);
-   border-radius: 0rem;
+    border-radius: 0rem;
 }
 
-.search--btn{
- border-radius: 0rem;
-padding: 0.66rem 2rem;
+.search--btn {
+    border-radius: 0rem;
+    padding: 0.66rem 2rem;
 }
 
 .local-btn:hover {
@@ -168,7 +168,7 @@ padding: 0.66rem 2rem;
 }
 
 /* part of add */
-.add-container{
+.add-container {
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
@@ -339,7 +339,6 @@ input {
 .contact-form-container {
     display: flex;
     flex-direction: column;
-    /* flex-direction: row; */
     flex-wrap: wrap;
     margin: 2rem 4rem;
     justify-content: space-evenly;
@@ -359,12 +358,6 @@ input {
 .form-text {
     font-size: 1rem;
 }
-
-/* .form-desc{
-    display: flex;
-    flex-direction: column;
-} */
-
 
 /********** listing design *********/
 .listing-container {
@@ -399,16 +392,51 @@ input {
 
 
 /******* search result css*******/
-.search-result-container{
+.search-result-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center ;
-    margin:2rem 1rem;
+    align-items: center;
+    margin: 2rem 1rem;
     padding: 1rem;
-
 }
+
+.table {
+    border-collapse:collapse ;
+    margin: 3rem 1rem;
+    max-width: 100%;
+    border-radius: 0.8rem 0.8rem 0.8rem 0rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.table thead tr {
+    background-color: var(--sec-background-color);
+    padding: 1rem 0rem;
+    text-align: left;
+}
+
+.table tbody td {
+    text-align: left;
+}
+
+.table tbody tr {
+    border-bottom: 0.1rem solid var(--border-color);
+    margin:0.5rem 0rem;
+    /* padding: 0.5rem 0rem; */
+}
+
+.table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f0ebab;
+    
+}
+
 /***************** RESPONSIVE DESIGN ****************/
 @media (max-width: 992px) {
     .left-section {
