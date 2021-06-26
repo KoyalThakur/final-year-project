@@ -32,12 +32,13 @@ class Property(models.Model):
     room=(('1-BHK',"1-BHK"),('2-BHK',"2-BHK"),('3-BHK',"3-BHK"))
     rooms=models.CharField(max_length=10,choices=room,default="1-BHK")
     furnishing=models.CharField(max_length=15,choices=furnish,default="Un-furnished")
-    acornonac=models.CharField(max_length=10,choices=air,default="NON-AC")
+    conditioning=models.CharField(max_length=10,choices=air,default="NON-AC")
     image=models.ImageField(upload_to='uploads/',blank=True,null=True)
     thumbnail=models.ImageField(upload_to='uploads/',blank=True,null=True)
-    desc=models.TextField(max_length=100,help_text="Want to write more about your property?",default="")
+    description=models.TextField(max_length=100,help_text="Want to write more about your property?",default="")
     occupancy=models.IntegerField(default=0,help_text="Enter occupancy per room")
     phone=models.IntegerField(default=0)
+    distance=models.IntegerField(default=0)
     class Meta:
         ordering=['-date_added']
 

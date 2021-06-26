@@ -16,7 +16,7 @@ class PropertyForm(ModelForm):
     
     class Meta:
         model = Property
-        fields=('institute_name','address','rent','acornonac','furnishing','rooms','occupancy','phone','desc','image')
+        fields=('institute_name','address','rent','conditioning','furnishing','rooms','occupancy','distance','phone','description','image')
 
 
 
