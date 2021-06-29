@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--y4-0ba!uawz+1e#8k4^0a_d&sok+d45)s7naakjt8vo!k&qv5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000', 'webnarys.herokuapp.com']
 
 
 # Application definition
@@ -126,11 +126,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-MEDIA_URL='/media/'
-MEDIA_ROOT=BASE_DIR / 'media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MESSAGE_TAGS={messages.SUCCESS:'success'}
+MESSAGE_TAGS = {messages.SUCCESS: 'success'}
