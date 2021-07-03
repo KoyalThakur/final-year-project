@@ -403,7 +403,7 @@ input {
 }
 
 .table {
-    border-collapse:collapse ;
+    border-collapse: collapse;
     margin: 3rem 1rem;
     max-width: 100%;
     border-radius: 0.8rem 0.8rem 0.8rem 0rem;
@@ -423,8 +423,7 @@ input {
 
 .table tbody tr {
     border-bottom: 0.1rem solid var(--border-color);
-    margin:0.5rem 0rem;
-    /* padding: 0.5rem 0rem; */
+    margin: 0.5rem 0rem;
 }
 
 .table td {
@@ -434,7 +433,7 @@ input {
 
 .table tbody tr:nth-of-type(even) {
     background-color: #f0ebab;
-    
+
 }
 
 /***************** RESPONSIVE DESIGN ****************/
@@ -520,6 +519,19 @@ input {
     .about-desc-head {
         font-size: 4rem;
         font-weight: 600;
+    }
+
+    /* part of add */
+    .add-container {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        max-width: fit-content;
+    }
+
+    .main-container {
+        margin-top: 10rem;
+        min-height: 100vh;
+        display: flex;
     }
 
 }
